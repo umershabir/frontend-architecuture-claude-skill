@@ -1,0 +1,30 @@
+doctype html
+html(lang=meta.lang || 'en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    title= meta.title
+    meta(name="description" content=meta.description)
+    meta(property="og:title" content=meta.title)
+    meta(property="og:description" content=meta.description)
+
+    //- Device class read by app/classes/Detection.js and usable in CSS. Runs before first paint.
+    script.
+      (function () {
+        var root = document.documentElement
+        var touch = window.matchMedia('(pointer: coarse)').matches
+        var narrow = window.matchMedia('(max-width: 767px)').matches
+        root.classList.add(touch ? (narrow ? 'phone' : 'tablet') : 'desktop')
+      })()
+
+  body
+    include partials/preloader
+    include partials/navigation
+
+    //- Every page is rendered here. The app only toggles which one is active.
+    main.content
+      include pages/home
+      include pages/about
+
+    script(type="module" src="/app/index.js")

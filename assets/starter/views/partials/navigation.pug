@@ -1,0 +1,7 @@
+nav.navigation
+  a.navigation__brand(href="/")= meta.title
+
+  ul.navigation__list
+    each item in navigation
+      li.navigation__item
+        a.navigation__link(href=item.href)= item.label

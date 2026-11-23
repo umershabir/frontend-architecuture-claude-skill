@@ -1,0 +1,40 @@
+@use '../utils' as *;
+
+.about {
+  @extend %page;
+
+  &--active {
+    @extend %page--active;
+  }
+}
+
+.about__wrapper {
+  padding: 24rem 12rem 16rem;
+
+  @include below(phone) {
+    padding: 20rem 4rem 12rem;
+  }
+}
+
+.about__title {
+  font-size: 12rem;
+  font-weight: 400;
+}
+
+.about__paragraph {
+  font-size: 3.6rem;
+  margin-top: 12rem;
+  max-width: 100rem;
+}
+
+.about__media {
+  aspect-ratio: 16 / 9;
+  margin-top: 12rem;
+  overflow: hidden;
+}
+
+.about__media__image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}

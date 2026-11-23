@@ -1,0 +1,12 @@
+@use 'sass:list';
+@use 'variables' as *;
+
+@function z($name) {
+  $index: list.index($z-layers, $name);
+
+  @if not $index {
+    @error 'Unknown z-layer "#{$name}". Add it to $z-layers in _variables.scss.';
+  }
+
+  @return list.length($z-layers) - $index + 1;
+}

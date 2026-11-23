@@ -1,0 +1,25 @@
+// Colors / breakpoints / easing are mirrored in app/utils/constants.js — change both.
+$color-dark: #1e1e24;
+$color-light: #f4efe7;
+
+$font-primary: system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+$ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+// Design comp widths: 1rem = 10px of the comp at any viewport width.
+$design-width: 1920;
+$design-width-phone: 750;
+
+$breakpoints: (
+  phone: 768px,
+  tablet: 1024px
+);
+
+// Stacking order, top first. Use z('name'); never hardcode z-index numbers.
+$z-layers: (
+  'preloader',
+  'transition',
+  'navigation',
+  'content',
+  'canvas'
+);

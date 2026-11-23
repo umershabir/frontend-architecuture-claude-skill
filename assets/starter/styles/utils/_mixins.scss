@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+%cover {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+// Pages stay laid out while hidden (WebGL and animations measure them).
+%page {
+  @extend %cover;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+%page--active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+@mixin below ($breakpoint) {
+  @media (max-width: #{map.get($breakpoints, $breakpoint) - 1px}) {
+    @content;
+  }
+}

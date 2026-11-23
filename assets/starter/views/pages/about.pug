@@ -1,0 +1,17 @@
+section.about(
+  data-title=pages.about.metaTitle
+  data-background=pages.about.background
+  data-color=pages.about.color
+)
+  //- Scrollable pages need a wrapper: it is what the virtual scroll translates.
+  .about__wrapper
+    h1.about__title(data-animation="paragraph")!= pages.about.title
+
+    each block in pages.about.blocks
+      if block.type === 'text'
+        p.about__paragraph(data-animation="paragraph")= block.text
+
+      else if block.type === 'image'
+        //- DOM image, lazy-loaded via data-src (classes/AsyncLoad.js), moved by animations/Parallax.js.
+        figure.about__media(data-animation="parallax")
+          img.about__media__image(alt=block.alt data-src=block.image)

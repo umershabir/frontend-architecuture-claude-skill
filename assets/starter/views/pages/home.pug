@@ -1,0 +1,17 @@
+//- Page root: data-* attributes are read by classes/Page.js (colors) and app/index.js (title, transition color).
+section.home(
+  data-title=pages.home.metaTitle
+  data-background=pages.home.background
+  data-color=pages.home.color
+)
+  .home__content
+    h1.home__title(data-animation="paragraph")!= pages.home.title
+    a.home__link(href="/about")= pages.home.link
+
+  //- WebGL placeholders: never painted (see base.scss), but their boxes position the meshes.
+  //- Rendered twice so the infinite loop always has more content than the viewport.
+  .home__gallery
+    each pass in [0, 1]
+      each media in pages.home.gallery
+        figure.home__gallery__media
+          img.home__gallery__media__image(alt=media.alt data-gl-src=media.image)

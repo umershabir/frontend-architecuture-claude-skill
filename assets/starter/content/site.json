@@ -1,0 +1,51 @@
+{
+  "routes": ["/", "/about"],
+
+  "meta": {
+    "lang": "en",
+    "title": "Studio",
+    "description": "An immersive frontend starter."
+  },
+
+  "preloader": {
+    "title": "Loading\nthe experience"
+  },
+
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" }
+  ],
+
+  "pages": {
+    "home": {
+      "metaTitle": "Studio",
+      "background": "#C97164",
+      "color": "#F9F1E7",
+      "title": "Crafted<br>in motion",
+      "link": "About us",
+      "gallery": [
+        { "image": "https://picsum.photos/id/1011/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1015/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1025/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1035/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1043/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1050/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1062/800/1000", "alt": "" },
+        { "image": "https://picsum.photos/id/1074/800/1000", "alt": "" }
+      ]
+    },
+
+    "about": {
+      "metaTitle": "About — Studio",
+      "background": "#B2B8C3",
+      "color": "#37384C",
+      "title": "We build<br>quiet, tactile<br>interfaces",
+      "blocks": [
+        { "type": "text", "text": "Every page of this site lives in one document. Navigating swaps which page is active and which WebGL scene is attached, behind a full-screen transition." },
+        { "type": "image", "image": "https://picsum.photos/id/1018/1600/900", "alt": "" },
+        { "type": "text", "text": "Scrolling is virtual: the wrapper is translated by a lerped value each frame, and scroll-linked animations read the same value." },
+        { "type": "image", "image": "https://picsum.photos/id/1039/1600/900", "alt": "" }
+      ]
+    }
+  }
+}

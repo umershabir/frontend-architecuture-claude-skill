@@ -1,0 +1,67 @@
+@use '../utils' as *;
+
+.home {
+  @extend %page;
+
+  overflow: hidden;
+
+  &--active {
+    @extend %page--active;
+  }
+}
+
+.home__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  height: 100%;
+  justify-content: center;
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.home__title {
+  font-size: 14rem;
+  font-weight: 400;
+}
+
+.home__link {
+  border: 1px solid currentColor;
+  border-radius: 10rem;
+  padding: 1.6rem 3.2rem;
+  pointer-events: auto;
+}
+
+// Layout source for the WebGL gallery. Vertical padding = half the gap keeps the loop seamless.
+.home__gallery {
+  display: grid;
+  gap: 4rem 6rem;
+  grid-template-columns: repeat(4, 1fr);
+  left: 0;
+  padding: 2rem 12rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include below(phone) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 4rem;
+  }
+}
+
+.home__gallery__media {
+  aspect-ratio: 4 / 5;
+
+  &:nth-child(even) {
+    transform: translateY(12rem);
+  }
+}
+
+.home__gallery__media__image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
